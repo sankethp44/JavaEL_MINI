@@ -1,4 +1,4 @@
-# 🧩 Java Word Search Game
+# Java Word Search Game
 
 A simple **Java Swing** application where users search for words in a grid. The game randomly places words from a predefined list in various directions, and players select letters to match words.
 
