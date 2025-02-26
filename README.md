@@ -29,7 +29,6 @@ Before running this project, ensure you have:
 
 You can download the project files in the following way:   
 `git clone https://github.com/sankethp44/JavaEL_MINI.git`   
-`cd JavaEL_MINI`    
 Or downlaod the ZIP from Github and extract it.
 
 
