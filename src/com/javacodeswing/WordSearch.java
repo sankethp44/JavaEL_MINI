@@ -248,6 +248,54 @@ public class WordSearch extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(WordSearch::new);
+        new SplashScreen();
+    }
+}
+class SplashScreen extends JWindow {
+    public SplashScreen() {
+        JLabel label = new JLabel(new ImageIcon("splash.png")); 
+        getContentPane().add(label, BorderLayout.CENTER);
+        setSize(500, 300);
+        setLocationRelativeTo(null);
+        setVisible(true);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        setVisible(false);
+        dispose();
+        new MainMenu();
+    }
+}
+
+class MainMenu extends JFrame {
+    public MainMenu() {
+        setTitle("Word Search - Main Menu");
+        setSize(420, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridLayout(3, 1));
+        setLocationRelativeTo(null);
+
+        JLabel titleLabel = new JLabel("Word Search Game", SwingConstants.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
+
+        JButton startButton = new JButton("Start Game");
+        JButton exitButton = new JButton("Exit");
+
+        startButton.addActionListener(e -> {
+            new WordSearch();
+            dispose();
+        });
+
+        exitButton.addActionListener(e -> System.exit(0));
+
+        add(titleLabel);
+        add(startButton);
+        add(exitButton);
+
+        setVisible(true);
     }
 }
